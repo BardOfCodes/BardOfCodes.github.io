@@ -1,36 +1,93 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
+<div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      {% if include.sidebar == 'basic' %}
+        <img src= "{{site.baseurl }}img/pretty image.jpg" class = "w3-circle profile" >
+      {% endif %}
+      <h3>
+        <a href="{{ site.baseurl }}"  >
+          Aditya Ganeshan
         </a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
+      </h3>
+      {% if include.sidebar == 'basic' %}
+        <p class="lead">{{ site.description }}</p>
+      {% endif %}
     </div>
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      {% if page.url ==  '' %}
+      sidebar-menu__item--expanded sidebar-menu__item--active
+      {% endif %} ">
+      <a href="{{ site.baseurl }}">Home</a>
+    </li>
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      {% if page.url contains 'projects' %}
+      sidebar-menu__item--expanded sidebar-menu__item--active
+      {% endif %} ">
+      <a href="{{ site.baseurl }}projects/">Projects</a>
+    </li>
+      {% if page.url == '/projects/' %}
+        {% include subhead_anchor_lister.html type='project' %}
+      {% endif %}
 
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+      {% if page.type =='project' %}
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">{{ page.title }}</a>
+        </li>
+        {% include anchor_lister.html %}
+</ul>
+</li>
+      {% endif %}
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      {% if page.url contains 'blog' %}
+      sidebar-menu__item--expanded sidebar-menu__item--active
+      {% endif %} ">
+      <a href="{{ site.baseurl }}blog/">Blog</a>
+    </li>
+      {% if page.url == '/blog/' %}
+        {% include subhead_anchor_lister.html type='blog' %}
+      {% endif %}
+      {% if page.type =='blog' %}
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">{{ page.title }}</a>
+        </li>
+        {% include anchor_lister.html %}
+</ul>
+</li>
+      {% endif %}
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      {% if page.url contains 'about' %}
+      sidebar-menu__item--expanded sidebar-menu__item--active
+      {% endif %} ">
+      <a href="{{ site.baseurl }}about/">About</a>
+    </li>
+     </ul>
 
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
-    </nav>
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
 
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="{{ site.baseurl }}img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="{{ site.baseurl }}img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="{{ site.baseurl }}img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>

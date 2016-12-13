@@ -3,11 +3,19 @@
 
   {% include head.html %}
 
-  <body>
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url({{ site.baseurl }}img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
 
-    {% include sidebar.html %}
+      {% if page.sidebar=="basic" %}
+        {% include sidebar.html sidebar='basic' %}
+      {% else %}
+        {% include sidebar.html sidebar='complex' %}
+      {% endif %}
 
-    <div class="content container">
+    <div class="content container main-container">
       {{ content }}
     </div>
 

@@ -1,0 +1,32 @@
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+ {% assign limitter=0 %}
+
+  <!-- {% increment var %} -->
+
+  {% if var != 0 %}
+  {% assign limitter= var %}
+  {% for i in (1...limitter)%}
+  <!-- {% decrement var %}-->
+  {% endfor %}
+  {% endif %}
+
+  {% for post in site.pages %}
+    {% if post.type == include.type %}
+      {% if var < 5 %}
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      <!-- {% increment var %} -->
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {%assign limitter = var %}
+  {%for i in (0...limitter) %}
+    <!-- {% decrement var %} -->
+  {% endfor %}
+
+</ul>
+</li>
+
