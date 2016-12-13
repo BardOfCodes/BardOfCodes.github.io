@@ -5,9 +5,9 @@ This web site has been made using jekyll, hosted on github-pages.My theme is bui
 
 Feel free to contact me -
 
-* On [Twitter](https://twitter.com/SoRapterPhilo){:target="_blank"},
+* On [Twitter](https://twitter.com/SoRapterPhilo),
 
-* On [LinkedIn](https://in.linkedin.com/in/aditya-ganeshan-68341bb9){:target="_blank"},
+* On [LinkedIn](https://in.linkedin.com/in/aditya-ganeshan-68341bb9),
 
 * Through <a href="mailto:adityaganeshan@gmail.com?Subject=" target="_top">E-mail</a>.
 
