@@ -44,7 +44,7 @@
 
             </div>
             <div class="button-block">
-            <a  href="{{ post.url }}" class= "button" target="_blank">Read More</a>
+            <a  href="{{ post.url }}" class= "button" target="_blank">READ MORE</a>
             {% if post.buttons %}
               {% for button_hash in post.buttons %}
                 {% for button in button_hash %}
@@ -52,12 +52,6 @@
                 {% endfor %}
               {% endfor %}
             {% endif %}
-              {% if post.blog %}
-                <a href="{{ post.url }}" class="button" >BLOG</a>
-              {% endif %}
-              {% if post.code %}
-                <a href="{{ post.code }}" target="_blank" class="button ">CODE</a>
-              {% endif %}
             </div>
           </div>
 
