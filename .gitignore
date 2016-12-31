@@ -13,6 +13,7 @@ _site
 *.swp
 *.zip
 *.vi
+*.yml
 *~
 
 # OS or Editor folders
