@@ -55,25 +55,7 @@ Tha major Contributions of this work are:
 
 Here we present some numbers from the paper, which should intrigue you enough to have a look at the paper itself:
 
-$$
-\subsubsection{Fooling performance of the data-free objective}
-\begin{table}[]
-\caption{Fooling rates for the proposed data-free objective. Diagonal rates indicate the white-box attacking and off-diagonal ones represent the black-box attacking scenarios.}
-\centering
-\label{tab:fooling-transfer}
-\begin{tabular}{@{}lccccccc@{}}
-%\small
-\toprule
-Model        & Caffenet       & VGG-F          & GoogLeNet      & VGG-16         & VGG-19         & Resnet-152     \\ \midrule
-Caffenet     & \textbf{87.02} & 65.97          & 49.40          & 50.46          & 49.92          & 38.57          \\
-VGG-F        & 59.89          & \textbf{91.91} & 52.24          & 51.65          & 50.63          & 40.72         \\
-GoogLeNet    & 44.70          & 46.09          & \textbf{71.44} & 37.95          & 37.90          & 34.56         \\
-VGG-16       & 50.05          & 55.66          & 46.59          & \textbf{63.08} & 56.04          & 36.84         \\
-VGG-19       & 49.11          & 53.45          & 40.90          & 55.73          & \textbf{64.67} & 35.81         \\
-Resnet-152   & 38.41          & 37.20          & 33.22          & 27.76          & 26.52          & \textbf{37.3} \\ \bottomrule
-\end{tabular}
-\end{table}
-$$
+Add table for classification
 
 Add table for Segmentation and Depth Estimation.
 
