@@ -1,7 +1,0 @@
-<li class="sidebar-menu__item sidebar-menu__item--0 {% if page.url contains 'blogs' %} sidebar-menu__item--expanded sidebar-menu__item--active {% endif %} ">
-  <a href="{{ site.baseurl }}{{ include.url }}">{{ include.name }}</a>
-</li>
-{{ page.url }} is like /{{ include.url }}/
-      {% if page.url contains {{ include.url }} %}
-        {% include anchor_lister.html %}
-      {% endif %}

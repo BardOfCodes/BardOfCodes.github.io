@@ -1,10 +1,881 @@
----
-layout: default
-title: Home
-sidebar: project
-Date: 2011/1/1
----
+<!DOCTYPE html>
+<html lang="en-us">
 
-{% include cards.html limit=20 type='project' featured='false' %}
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-{% include paginator.html %}
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Aditya Ganeshan &middot; Music and Maths enthusiast
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url(/img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
+
+      
+        <div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      
+      <h3>
+        <a href="/"  >
+          Aditya Ganeshan
+        </a>
+      </h3>
+      
+    </div>
+
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/">Home</a>
+    </li>
+
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
+       ">
+      <a href="/projects/">Projects</a>
+    </li>
+      
+        <li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+ 
+
+  <!-- -1 -->
+
+  
+
+  
+    
+  
+    
+      
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="/projects/a-seminar-srcnn/">Image Super Resolution using CNN - in Lasagne on jupyter notebook</a>
+        </li>
+      <!-- 0 -->
+      
+    
+  
+    
+  
+    
+      
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="/projects/generalizable-universal-adversarial-perturbation/">Generalizable Universal Adversarial perturbations</a>
+        </li>
+      <!-- 1 -->
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="/projects/numerical-solution-of-stochastic-burgers-equation/">Numerical Solution of Stochastic Burger's Equation</a>
+        </li>
+      <!-- 2 -->
+      
+    
+  
+    
+      
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="/projects/regularization-of-inverse-problems-part-i/">Regularization of Inverse Problems- Part I</a>
+        </li>
+      <!-- 3 -->
+      
+    
+  
+    
+      
+        <li class="sidebar-menu__item sidebar-menu__item--1">
+        <a  href="/projects/regularization-of-inverse-problems-part-ii/">Regularization of Inverse Problems- Part II</a>
+        </li>
+      <!-- 4 -->
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+  
+  
+    <!-- 4 -->
+  
+    <!-- 3 -->
+  
+    <!-- 2 -->
+  
+    <!-- 1 -->
+  
+    <!-- 0 -->
+  
+    <!-- -1 -->
+  
+
+</ul>
+</li>
+
+
+      
+
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
+      
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/about/">About</a>
+    </li>
+     </ul>
+
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
+
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="/img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="/img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="/img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+      
+
+    <div class="content container main-container">
+      
+<div class="posts">
+  
+
+  <!-- 0 -->
+
+  
+  
+  
+  <!-- 0-->
+  
+  
+
+  
+
+  
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/seminar-srcnn.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/a-seminar-srcnn/">
+
+              Image Super Resolution using CNN - in Lasagne on jupyter notebook
+
+            </a>
+            </h4>
+            <span class="post-date">25 Oct 2016</span>
+            <div class="text-excerpt">
+
+              For my Final-Year Seminar I reviewed the paper "Image Super-Resolution Using Deep Convolutional Networks" and made a narrative code in jupyter notebook implementing the SRCNN.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/a-seminar-srcnn/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="https://github.com/BardOfCodes/SRCNN-Lasagne-Jupyter-Notebook" class= "button" target="_blank">CODE</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/wtrfhfgykrbf" class= "button" target="_blank">LATEX</a>
+                
+              
+                
+                    <a  href="../../pdf/seminar-srcnn.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 0 -->
+      
+      
+    
+  
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/fff.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/generalizable-universal-adversarial-perturbation/">
+
+              Generalizable Universal Adversarial perturbations
+
+            </a>
+            </h4>
+            <span class="post-date">20 Dec 2017</span>
+            <div class="text-excerpt">
+
+              This is a Paper we submitted to IEEE Transactions on Pattern Analysis and Machine Intelligence, where we exploit the interesting phenomena of existence of universal adversarial perturbations(UAPs). We propose an algorithm for generating UAPs for any deep learning task, with or without the target data.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/generalizable-universal-adversarial-perturbation/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="https://github.com/BardOfCodes/G-UAP" class= "button" target="_blank">CODE</a>
+                
+              
+                
+                    <a  href="../../pdf/G_UAP.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 1 -->
+      
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/SBE_1_2.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/numerical-solution-of-stochastic-burgers-equation/">
+
+              Numerical Solution of Stochastic Burger's Equation
+
+            </a>
+            </h4>
+            <span class="post-date">01 Mar 2015</span>
+            <div class="text-excerpt">
+
+              In this project, we simulated the numerical solution of stochastic burger's equation using Finite Difference Method
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/numerical-solution-of-stochastic-burgers-equation/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../pdf/numerical-approximation-stochastic.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/gyczvbxcwqmk" class= "button" target="_blank">LATEX</a>
+                
+              
+                
+                    <a  href="https://github.com/BardOfCodes/FDM-Stochastic-Burgers-MATLAB" class= "button" target="_blank">CODE</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 2 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/regularization-of-inverse-problems-part-i.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/regularization-of-inverse-problems-part-i/">
+
+              Regularization of Inverse Problems- Part I
+
+            </a>
+            </h4>
+            <span class="post-date">01 Aug 2016</span>
+            <div class="text-excerpt">
+
+              The first in a 5 part introduction to Regularization of Inverse Problems.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/regularization-of-inverse-problems-part-i/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../../pdf/introduction-inverse-problems.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/fkxxzvqzcvdp" class= "button" target="_blank">LATEX</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 3 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/regularization-of-inverse-problems-part-ii.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/regularization-of-inverse-problems-part-ii/">
+
+              Regularization of Inverse Problems- Part II
+
+            </a>
+            </h4>
+            <span class="post-date">15 Aug 2016</span>
+            <div class="text-excerpt">
+
+              In this part we formulate inverse solutions for ill-posed linear operators.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/regularization-of-inverse-problems-part-ii/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../../pdf/ill-posed-linear-operator.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/yrdrzhhfkdpd" class= "button" target="_blank">LATEX</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 4 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/regularization-of-inverse-problems-part-iii.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/regularization-of-inverse-problems-part-iii/">
+
+              Regularization of Inverse Problems- Part III
+
+            </a>
+            </h4>
+            <span class="post-date">01 Sep 2016</span>
+            <div class="text-excerpt">
+
+              In this part we learn the formal definition of a regularization method and important results about convergence.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/regularization-of-inverse-problems-part-iii/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../../pdf/regularization-operators.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/kkxmvtsmmxrb" class= "button" target="_blank">LATEX</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 5 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/regularization-of-inverse-problems-part-iv.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/regularization-of-inverse-problems-part-iv/">
+
+              Regularization of Inverse Problems- Part IV
+
+            </a>
+            </h4>
+            <span class="post-date">15 Sep 2016</span>
+            <div class="text-excerpt">
+
+              Now its time to look into some of the choices of the parameter choice rule, a-priori parameter choice and the Discrepancy principle.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/regularization-of-inverse-problems-part-iv/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../../pdf/continuous-regularization-methods-1.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+                
+                    <a  href="https://www.overleaf.com/read/qhcphdnnxskn" class= "button" target="_blank">LATEX</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 6 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/regularization-of-inverse-problems-part-v.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/regularization-of-inverse-problems-part-v/">
+
+              Regularization of Inverse Problems- Part V
+
+            </a>
+            </h4>
+            <span class="post-date">01 Oct 2016</span>
+            <div class="text-excerpt">
+
+              In this part, we exlore an improved parameter choice rule, and heuristic rules.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/regularization-of-inverse-problems-part-v/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../../pdf/continuous-regularization-methods-2.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 7 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/seg_unravel_1.png"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/seg-unravel/">
+
+              Seg-Unravel
+
+            </a>
+            </h4>
+            <span class="post-date">16 May 2017</span>
+            <div class="text-excerpt">
+
+              I completed my IIT Rorokee master's Dissertation in collaboration with VAL-IISc titled "Per-pixel Feedback For Improving Semantic Segmentation". In the first part of this work, we introduce 'segmentation unravel', a method to find the important global image information in DCNNs for semantic segmentation. Based on experiments we propose new auxiliary task for improving semantic segmentation and show resutls for it.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/seg-unravel/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="https://github.com/BardOfCodes/Seg-Unravel" class= "button" target="_blank">CODE</a>
+                
+              
+                
+                    <a  href="../../pdf/seg_unravel.pdf" class= "button" target="_blank">PDF</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 8 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/theano-lasagne-tutorial.jpg"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/theano-lasagne-tutorial/">
+
+              Theano and Lasange Tutorial for Logistic Regression to CNN
+
+            </a>
+            </h4>
+            <span class="post-date">01 Mar 2015</span>
+            <div class="text-excerpt">
+
+              A Simple Jupyter notebook based tutorial on how to use Theano and Lasagne for making neural nets. Along the way we also make submissions for The MNIST digit recognition challenge.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/theano-lasagne-tutorial/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="https://github.com/BardOfCodes/Theano-Lasagne-tutorial" class= "button" target="_blank">CODE</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 9 -->
+      
+      
+    
+  
+    
+
+      
+      
+      <div class="post post-excerpt w3-card-2 w3-row">
+
+        
+          <div class="w3-col m6 left ">
+            <img src="/img/waitlist_analysis.jpg"
+            class="excerpt">
+          </div>
+
+          <div class="w3-col m6 right">
+            <h4 class="post-title">
+            <a href="/projects/waitlist-analysis/">
+
+              Waitlist Analysis - "The Big Reveal" Competition entry
+
+            </a>
+            </h4>
+            <span class="post-date">01 Mar 2016</span>
+            <div class="text-excerpt">
+
+              This was our prize winning(3rd) submission in "The Big Reveal", a competition organised by Fuzzy Logix, in Congizance'16.
+
+            </div>
+            <div class="button-block">
+            <a  href="/projects/waitlist-analysis/" class= "button" target="_blank">Read More</a>
+            
+              
+                
+                    <a  href="../waitlist_analysis.jpg" class= "button" target="_blank">POSTER</a>
+                
+              
+                
+                    <a  href="../rar/waitlist_analysis.rar" class= "button" target="_blank">PREZI</a>
+                
+              
+            
+              
+              
+            </div>
+          </div>
+
+        
+      </div>
+
+      <!-- 10 -->
+      
+      
+    
+  
+
+  
+  
+    <!-- 10 -->
+  
+    <!-- 9 -->
+  
+    <!-- 8 -->
+  
+    <!-- 7 -->
+  
+    <!-- 6 -->
+  
+    <!-- 5 -->
+  
+    <!-- 4 -->
+  
+    <!-- 3 -->
+  
+    <!-- 2 -->
+  
+    <!-- 1 -->
+  
+    <!-- 0 -->
+  
+    <!-- -1 -->
+  
+</div>
+
+
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+
+    </div>
+
+  </body>
+</html>

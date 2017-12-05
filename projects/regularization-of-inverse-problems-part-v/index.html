@@ -11,7 +11,7 @@
 
   <title>
     
-      Aditya Ganeshan &middot; Music and Maths enthusiast
+      Regularization of Inverse Problems- Part V &middot; Aditya Ganeshan
     
   </title>
 
@@ -78,72 +78,52 @@
     </li>
 
     <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
        ">
       <a href="/projects/">Projects</a>
     </li>
       
 
       
-    <li class="sidebar-menu__item sidebar-menu__item--0
-      
-      sidebar-menu__item--expanded sidebar-menu__item--active
-       ">
-      <a href="/blog/">Blog</a>
-    </li>
-      
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">Regularization of Inverse Problems- Part V</a>
+        </li>
         <li class='sidebar-menu__submenu  no-bullet'>
 <ul class="in-page-menu sidebar-menu">
- 
-
-  <!-- -1 -->
-
-  
-
-  
     
-  
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#improved-a-posteriori-rules">Improved-A-posteriori Rules</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#heuristic-parameter-choice-rules">Heuristic Parameter Choice Rules</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#presentation">Presentation</a>
+        </li>
+        
+      
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-  
-    <!-- -1 -->
-  
-
 </ul>
 </li>
 
-
+</ul>
+</li>
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
       
       
     <li class="sidebar-menu__item sidebar-menu__item--0
@@ -177,18 +157,65 @@
       
 
     <div class="content container main-container">
-      <h1>Coming up soon!</h1>
+      <div class="post">
+  <h2 class="post-title">Regularization of Inverse Problems- Part V</h2>
+  <span class="post-date">01 Oct 2016</span>
+  <h3 id="improved-a-posteriori-rules">Improved-A-posteriori Rules</h3>
 
+<p>In the previous part, the a-posteriori parameter choice rule that we defined, The discrepancy
+principle, was optimal only upto <script type="math/tex">\mu_0 -1/2</script>, where <script type="math/tex">\mu_0</script> is the qualification
+of the regularization method.</p>
 
-<div class="pagination">
-  
-    <span class="pagination-item older">Older</span>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
+<p>Now, we define an imporved a-posteriori rule which yeilds optimality upto the qualification
+<script type="math/tex">\mu_0</script> itself. After simpfication it leads to</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{\partial}{\partial \alpha}({ || r^\alpha ({T}^{*}T){x}^{\dagger} || }^{2} + C
+{\delta}^{2} {G}_{\alpha}) =0.
+\end{equation}</script>
+
+<p>We prove its optimality, and also show its relation to the discrepancy rule.</p>
+
+<h3 id="heuristic-parameter-choice-rules">Heuristic Parameter Choice Rules</h3>
+
+<p>In real life, many times the noise level information is not availible. In such situations, we
+are forced to use Error-free parameter choice rules, which do not depend on the data error
+level <script type="math/tex">\delta</script>.Most heuristic rules for error free parameter choice rules are based on
+some kind of error estimation. Here we discuss generalized cross-validation and L-curve method.</p>
+
+<p>In one method we pick regularization parameter as the one for which</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{1}{\alpha}r_\alpha ({T}^{*}T)(y^\delta - y) \quad vs. \quad
+g_\alpha ({T}^{*}T){T}^{*}(y_\delta - y)
+\end{equation}</script>
+
+<p>In another method, we plot $||{\xalde}||$ versus $||{y^\delta - T {x}_{\alpha}^{\delta}}||$ in a log-log scale
+for a large range of $\alpha$ values, and find the ‘corner’ of the drawn curve. We also cover
+Hansen and O’leary Algorithm.</p>
+
+<h3 id="presentation">Presentation</h3>
+
+<p>For going through the actual latex presentation,</p>
+
+<ul>
+  <li>
+    <p>Download the PDF <a href="../../pdf/continuous-regularization-methods-2.pdf">here</a></p>
+  </li>
+  <li>
+    <p>See the latex code <a href="https://www.overleaf.com/read/xgwdynqkcqff">here</a></p>
+  </li>
+</ul>
+
 </div>
-
+<!--
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+-->
 
     </div>
 

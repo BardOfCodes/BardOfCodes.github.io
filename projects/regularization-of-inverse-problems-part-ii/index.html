@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Regularization of Inverse Problems- Part II &middot; Aditya Ganeshan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url(/img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
+
+      
+        <div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      
+      <h3>
+        <a href="/"  >
+          Aditya Ganeshan
+        </a>
+      </h3>
+      
+    </div>
+
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/">Home</a>
+    </li>
+
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
+       ">
+      <a href="/projects/">Projects</a>
+    </li>
+      
+
+      
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">Regularization of Inverse Problems- Part II</a>
+        </li>
+        <li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+    
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#introduction">Introduction</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#moore-penrose-generalized-inverse">Generalized Inverse</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#compact-linear-operators">Compact Linear Operators</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#spectral-theory-and-functional-calculus">Spectral Theory</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#presentation">Presentation</a>
+        </li>
+        
+      
+    
+</ul>
+</li>
+
+</ul>
+</li>
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
+      
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/about/">About</a>
+    </li>
+     </ul>
+
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
+
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="/img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="/img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="/img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+      
+
+    <div class="content container main-container">
+      <div class="post">
+  <h2 class="post-title">Regularization of Inverse Problems- Part II</h2>
+  <span class="post-date">15 Aug 2016</span>
+  <h3 id="introduction">Introduction</h3>
+
+<p>In this part we will formulate the concept of ill-posedness for linear operators more formally.
+Based on the previously learnt Hadamard’s conditions for well-posedness, we formulate an ill-posed
+problem in terms of a linear operator.</p>
+
+<h3 id="moore-penrose-generalized-inverse">Moore-Penrose Generalized Inverse</h3>
+
+<p>Now, let the operator <script type="math/tex">T</script> be mapped from Hilbert space <script type="math/tex">X</script> to <script type="math/tex">Y</script>.We would like to define
+some sort of solution for the inverse of this operator, even at points not originally in the
+range of <script type="math/tex">T</script>. Hence, we define the Moore-Penrose Generalized Inverse.</p>
+
+<p>We define all x having that quality that
+<script type="math/tex">\begin{equation}
+\left\| Tx-y \right\| =inf\{ \left\| Tx-y \right\| | x\in X\}
+\end{equation}</script>
+as least-square solutions. To fight the problem of uniqueness of solution we further define the
+best-approximate solution to be the least-square solution of the minimum norm.</p>
+
+<p>As it turns out, the Moore-Penrose Generalized Inverse is actually the best-approximate solution
+( Only for points <script type="math/tex">y \in D(T^\dagger )</script>, where <script type="math/tex">T^\dagger</script> is the Moore-Penrose Generalized Inverse )</p>
+
+<h3 id="compact-linear-operators">Compact Linear Operators</h3>
+
+<p>We study Compact Linear operators since integral operators are compact under suitable assumptions.
+Compact linear operators give us a lot of functionality in reformulating our solutions. For selfadjoint
+linear operator we define the <script type="math/tex">\textit{Eigensystem} ({\lambda }_{n};{v}_{n})</script>, and for
+compact linear operators that are not self-adjoint, we define the singular system  we construct
+a <script type="math/tex">\textit{singular system} ({ \sigma }_{n};{v}_{n},{u}_{n})</script>.</p>
+
+<p>Using these definitions, we derive important results and also show the link to Picard’s Criterion, which
+states that &gt;A best-approximate solution of <script type="math/tex">Kx = y</script> exists only if the generalized Fourier coefficients
+(<script type="math/tex">% <![CDATA[
+\left<y,{u}_{n}\right> %]]></script>) decay fast enough relative to <script type="math/tex">{\sigma}_{n}</script>.</p>
+
+<h3 id="spectral-theory-and-functional-calculus">Spectral Theory and Functional Calculus</h3>
+
+<p>Now, We define the spectral family <script type="math/tex">E_\lambda</script>, the spectral integral of our solution and formulate
+important theorems and propositions. These are fun to prove and will be very useful ahead.</p>
+
+<h3 id="presentation">Presentation</h3>
+
+<p>For going through the actual latex presentation,</p>
+
+<ul>
+  <li>
+    <p>Download the PDF <a href="../../pdf/ill-posed-linear-operator.pdf">here</a></p>
+  </li>
+  <li>
+    <p>See the latex code <a href="https://www.overleaf.com/read/yrdrzhhfkdpd">here</a></p>
+  </li>
+</ul>
+
+</div>
+<!--
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+-->
+
+    </div>
+
+  </body>
+</html>

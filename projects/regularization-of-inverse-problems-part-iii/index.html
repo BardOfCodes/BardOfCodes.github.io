@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Regularization of Inverse Problems- Part III &middot; Aditya Ganeshan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url(/img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
+
+      
+        <div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      
+      <h3>
+        <a href="/"  >
+          Aditya Ganeshan
+        </a>
+      </h3>
+      
+    </div>
+
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/">Home</a>
+    </li>
+
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
+       ">
+      <a href="/projects/">Projects</a>
+    </li>
+      
+
+      
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">Regularization of Inverse Problems- Part III</a>
+        </li>
+        <li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+    
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#introduction">Introduction</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#order-optimality">Order Optimality</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#regularization-by-projection">Regularization by projection</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#presentation">Presentation</a>
+        </li>
+        
+      
+    
+</ul>
+</li>
+
+</ul>
+</li>
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
+      
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/about/">About</a>
+    </li>
+     </ul>
+
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
+
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="/img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="/img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="/img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+      
+
+    <div class="content container main-container">
+      <div class="post">
+  <h2 class="post-title">Regularization of Inverse Problems- Part III</h2>
+  <span class="post-date">01 Sep 2016</span>
+  <h3 id="introduction">Introduction</h3>
+
+<p>In ill-posed problems, <script type="math/tex">T^\dagger y^\delta</script>, where <script type="math/tex">y^\delta</script> is the measurement with
+noise, is unbounded. Infact, it might not even exist! Hence we look for an approximation <script type="math/tex">x^{\delta}_{\alpha}</script>,
+such that it depends continuously on the noisy data, and tends to <script type="math/tex">x^\dagger</script> as the
+noise level decreases to zero.</p>
+
+<p>With this motive, we formulate a regularization method <script type="math/tex">(R_\alpha , \alpha )</script>, such that it satifies the stated conditions
+formally. We also define what we mean by its convergence.</p>
+
+<p>Now, <script type="math/tex">\alpha</script>, called the parameter choice rule, can depend on <script type="math/tex">y^\delta</script>, data with noise,
+and <script type="math/tex">\delta</script>, the error levels. We define the various kinds of parameter choice rule
+based on its independence <script type="math/tex">y^\delta</script> or <script type="math/tex">\delta</script>.</p>
+
+<h3 id="order-optimality">Order Optimality</h3>
+
+<p>As far as the convergence of Regularization methods is concerned, we need to also think about the
+rate if this convergence. We can define the rate of convergence as the rate at which,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\left\| {x}_{\alpha} - {x}^{\dagger} \right\| \rightarrow 0 \quad
+as \quad \alpha \rightarrow 0.
+\end{equation}</script>
+
+<p>Along the way we define the modulus of continuity, <script type="math/tex">\Omega(\delta, M)</script>, and the worst
+error possible under the information that <script type="math/tex">x^\dagger \in M</script>, <script type="math/tex">\triangle(\delta,M,R)</script>.
+Using these two definitions we are able to define the optimal regularization method to be the one
+for which,  <script type="math/tex">\triangle(\delta,M,R)</script> is the lowest among all possible scenarios.</p>
+
+<p>Now, to more rigourously using a-priopi information we define source sets, <script type="math/tex">X_\mu</script>, and their
+source representation in <script type="math/tex">X_{\mu,\rho}</script>. Finally we fomulate the important defination
+of optimal regularization method which links the a-priori information to the worst error possible.</p>
+
+<h3 id="regularization-by-projection">Regularization By Projection</h3>
+
+<p>The last section covers the regularization method of finite dimensional projection. We discuss this
+method now in terms of the definitions that we have made in this chapter, and also find out
+its rate of convergence with some a-priori conditions.</p>
+
+<h3 id="presentation">Presentation</h3>
+
+<p>For going through the actual latex presentation,</p>
+
+<ul>
+  <li>
+    <p>Download the PDF <a href="../../pdf/regularization-operators.pdf">here</a></p>
+  </li>
+  <li>
+    <p>See the latex code <a href="https://www.overleaf.com/read/kkxmvtsmmxrb">here</a></p>
+  </li>
+</ul>
+
+</div>
+<!--
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+-->
+
+    </div>
+
+  </body>
+</html>

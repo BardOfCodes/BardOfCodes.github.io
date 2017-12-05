@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Seg-Unravel &middot; Aditya Ganeshan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url(/img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
+
+      
+        <div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      
+      <h3>
+        <a href="/"  >
+          Aditya Ganeshan
+        </a>
+      </h3>
+      
+    </div>
+
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/">Home</a>
+    </li>
+
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
+       ">
+      <a href="/projects/">Projects</a>
+    </li>
+      
+
+      
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">Seg-Unravel</a>
+        </li>
+        <li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+    
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#introduction">Introduction</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#segmentation-unravel">Segmentation Unravel</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#the-algorithm">The Algorithm</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#auxiliary-loss">Auxiliary Loss</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#links">Links</a>
+        </li>
+        
+      
+    
+</ul>
+</li>
+
+</ul>
+</li>
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
+      
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/about/">About</a>
+    </li>
+     </ul>
+
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
+
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="/img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="/img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="/img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+      
+
+    <div class="content container main-container">
+      <div class="post">
+  <h2 class="post-title">Seg-Unravel</h2>
+  <span class="post-date">16 May 2017</span>
+  <h3 id="introduction">Introduction</h3>
+
+<p>Semantic segmentation is the task of assigning a label to each pixel in the image.In recent years, deep convolutional neural networks have been driving advances in multiple tasks related to cognition. Although, DCNNs have resulted in unprecedented visual recognition performances,  they offer little transparency. To understand how DCNN based models work at the task of semantic segmentation, we try to analyze the DCNN models in semantic segmentation. We try to find the importance of global image information for labeling pixels.</p>
+
+<p>Based on the experiments on discriminative regions, and modeling of fixations, we propose a set of new training loss functions for fine-tuning DCNN based models. The proposed training regime has shown improvement in performance of DeepLab Large FOV(VGG-16) Segmentation model for PASCAL VOC 2012 dataset. However, based on further tests with other models, we found the improvements made by the proposed loss minimal. Hence, this work did not lead to a Conference publication. I believe it still holds value in showing the ideas used in this paper, which might just work well with few changes. At the least, this work encapsulates a possible pitfall.</p>
+
+<h3 id="segmentation-unravel">Segmentation Unravel</h3>
+
+<p><img src="../../img/seg_unravel_1.png" style="margin-left:auto;margin-right:auto;" /></p>
+
+<p>Although DCNNs have demonstrated outstanding performance for recognition tasks such as hand written character recognition and object classification, they offer limited transparency.One way to understand CNNs is to look at the important image regions that influence it’s prediction.Such regions might also offer visual explanations in terms of the responsible image regions that misguide the CNN, when the predictions are not accurate.</p>
+
+<p>[1] proposes an approach to determine the important image regions that guide the model to its inference. As they are modeled analogous to human eye fixations, they are called CNN-fixations. The approach traces the evidence for a given neuron activation, in the preceding layers.CNN-fixations is a visualization technique, based on this approach.It highlights the image locations that are responsible for the predicted label. High resolution and discriminative localization maps are computed from these locations. In presence of multiple objects, they can sequentially discover individual objects and obtain their localization maps.</p>
+
+<p>CNN-fixations is a visualization technique for highlighting image locations responsible for the predicted label. In work for the dissertation, this concept was extended to segmentation networks. The task now at hand is to highlight image regions which were responsible for the segmentation predicted by the network. It entails to finding, for each label detected,image regions which highly encouraged its labeling. Just as in CNN-fixations, we rely on the unraveling of strong neural activation pathways from the output to the input to find such regions. At each spatial location in the output, we have a predicted label.</p>
+
+<p><img src="../../img/seg_unravel_2.png" style="margin-left:auto;margin-right:auto;" /></p>
+
+<p>Many Experiments in the Dissertation explore how the neural pathways unravel. With the help of this, we also perform experiments for the salient parts of object, which help in the segmentation.</p>
+
+<h3 id="auxiliary-loss">Auxiliary Loss</h3>
+
+<p><img src="../../img/seg_unravel_3.png" style="margin-left:auto;margin-right:auto;" /></p>
+
+<p>Experiments in the Dissertation show presence of discriminative regions of object, which boost the activation for the object across the object segmentation in the image. This shows that a successful segmentation model will capture the presence of discriminative region, and propagate additional activation for the object to all regions of the object. We introduce a family of loss function with this goal in mind.</p>
+
+<p>Additionally, there are many unique labels which end up with highly correlated internal abstract representations in the model. Often objects of one of the correlated label is partially segmented as the object it is correlated to. This family of loss function additionally tries to decrease this similarity.</p>
+
+<p>The Crux of the proposed losses is to select the best class template for each class present in the image, and try to increase the similarity between the class templates and respective class pixels. The templates are selected at the pre-softmax layer,and loss is computed with the pre-softmax representation for each pixel in the image. Similarity is measured using Correlation and Cosine between the generated vectors.</p>
+
+<p>The paper shows improvement in the performance of DeepLab Large FOV architecture, introduced in [2]. However, this increase in performance can be attributed to the change in optimisation(Poly-rate decay instead of step-decay). Further experiments showed weak improvements (i.e. 0.5% improvement in Mean IOU) for Other models.</p>
+
+<h3 id="references">References</h3>
+
+<h3 id="links">Links</h3>
+
+<p>The code for this paper has been written in python on Pytorch as well as Tensorflow.You can,</p>
+
+<ul>
+  <li>
+    <p>Download the code <a href="https://github.com/BardOfCodes/Seg-Unravel">here</a></p>
+  </li>
+  <li>
+    <p>Download the Paper <a href="../../pdf/seg_unravel.pdf">here</a>.</p>
+  </li>
+</ul>
+
+</div>
+<!--
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+-->
+
+    </div>
+
+  </body>
+</html>
