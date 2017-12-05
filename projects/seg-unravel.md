@@ -4,7 +4,7 @@ title: Seg-Unravel
 thumbnail: img/seg_unravel_1.png
 buttons:
   - CODE: https://github.com/BardOfCodes/Seg-Unravel
-  - PDF: ../../pdf/G_UAP.pdf
+  - PDF: ../../pdf/seg_unravel.pdf
 category: Stochastic
 excerpt: I completed my IIT Rorokee master's Dissertation in collaboration with VAL-IISc titled "Per-pixel Feedback For Improving Semantic Segmentation". In the first part of this work, we introduce 'segmentation unravel', a method to find the important global image information in DCNNs for semantic segmentation. Based on experiments we propose new auxiliary task for improving semantic segmentation and show resutls for it.
 type: project
@@ -59,4 +59,4 @@ The code for this paper has been written in python on Pytorch as well as Tensorf
 
 * Download the code [here](https://github.com/BardOfCodes/Seg-Unravel)
 
-* Download the Paper [here](../../pdf/G_UAP.pdf).
+* Download the Paper [here](../../pdf/seg_unravel.pdf).
