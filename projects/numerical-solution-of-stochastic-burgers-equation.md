@@ -10,7 +10,6 @@ category: Stochastic
 excerpt: In this project, we simulated the numerical solution of stochastic burger's equation using Finite Difference Method
 type: project
 date: 2015/3/1
-featured: true
 anchors:
   - Introduction: introduction
   - Introduction to Burger's Equation: introduction-to-burgers-equation

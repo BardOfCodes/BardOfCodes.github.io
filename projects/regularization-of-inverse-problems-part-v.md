@@ -7,7 +7,6 @@ buttons:
 excerpt: In this part, we exlore an improved parameter choice rule, and heuristic rules.
 type: project
 date: 2016/10/1
-featured: true
 anchors:
   - Improved-A-posteriori Rules: improved-a-posteriori-rules
   - Heuristic Parameter Choice Rules: heuristic-parameter-choice-rules
