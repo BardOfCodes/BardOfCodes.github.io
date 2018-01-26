@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Generalizable Universal Adversarial perturbations &middot; Aditya Ganeshan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+
+  <body
+    style="background-color:#f9f9f9;
+      background-image: url(/img/bckgd_body.png);
+      background-repeat: repeat;
+      background-attachment: fixed;">
+
+      
+        <div class="sidebar w3-card">
+  <div class="container sidebar-sticky sidebar-sticky-up ">
+
+      <div class="sidebar-about ">
+      
+      <h3>
+        <a href="/"  >
+          Aditya Ganeshan
+        </a>
+      </h3>
+      
+    </div>
+
+    <ul class = "sidebar-menu sidebar-top-border">
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/">Home</a>
+    </li>
+
+    <li class="sidebar-menu__item sidebar-menu__item--0
+      
+      sidebar-menu__item--expanded sidebar-menu__item--active
+       ">
+      <a href="/projects/">Projects</a>
+    </li>
+      
+
+      
+<li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+        <li class="sidebar-menu__item sidebar-menu__item--1 font_bold">
+        <a  href="">Generalizable Universal Adversarial perturbations</a>
+        </li>
+        <li class='sidebar-menu__submenu  no-bullet'>
+<ul class="in-page-menu sidebar-menu">
+    
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#introduction">Introduction</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#introduction-to-universal-advesarial-perturbations">Introduction to Universal Adversarial Perturbations</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#the-algorithm">The Algorithm</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#results">Results</a>
+        </li>
+        
+      
+        
+        <li class="sidebar-menu__item sidebar-menu__item--2">
+        <a  href="#links">Links</a>
+        </li>
+        
+      
+    
+</ul>
+</li>
+
+</ul>
+</li>
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/blog/">Blog</a>
+    </li>
+      
+      
+    <li class="sidebar-menu__item sidebar-menu__item--0
+       ">
+      <a href="/about/">About</a>
+    </li>
+     </ul>
+
+    <ul class= "in-page-menu sidebar-menu sidebar-menu--support">
+
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://github.com/BardOfCodes" target="_blank">
+        <img src="/img/GitHub_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://in.linkedin.com/in/aditya-ganeshan-68341bb9" target="_blank">
+          <img src="/img/Linkedin_Logo.png" class="contact">
+        </a>
+      </li>
+      <li class="sidebar-menu__item sidebar-menu__item--0 sidebar-contact">
+        <a class="sidebar-nav-item" href="https://twitter.com/SoRapterPhilo" target="_blank">
+          <img src="/img/Twitter_Logo.png" class="contact">
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+      
+
+    <div class="content container main-container">
+      <div class="post">
+  <h2 class="post-title">Generalizable Universal Adversarial perturbations</h2>
+  <span class="post-date">20 Dec 2017</span>
+  <h2 class="post-title"><a href='https://arxiv.org/abs/1801.08092'>Link to Paper on Arxiv!</a></h2>
+  <h3 id="introduction">Introduction</h3>
+
+<p>During my Project Assistance-ship at Video Analytics Lab, IISc, I became fascinated with a very interesting aspect of deep learning. While the models generated from deep learning architectures performed amazingly well in almost all Computer Vision task, giving state-of-the-art performance on many metrics and datasets, they seemed to remain surprising defenseless against small engineered noises in the input. We add an engineered noise the the input, such that the change in the image is imperceptible to the human eye. The changed input has drastically poor predictions, where a classification model may predict a dog for a car, a segmentation model might label all pixels as sofa,etc.</p>
+
+<p>This phenomena in my perspective presents the inherant weakness of our current learning paradigms. On the casual reasoning perspective, it seems that the models are not properly learning the hirarchical features and their combination, which is the general assumption. From a mathematical perspective, It seems to be a functional mapping whose output vary highly with minor changes in input(i.e. unbounded gradients w.r.t. input).</p>
+
+<p>Is all of this just fun-side-projects and minor intricacies of deep learning? In my opinion, it is actually one of the biggest hurdles that the Deep learning “revolution” currently faces. When it comes to deploying a deep learning model for making critical decisions, that fact that such minor noises can drastically change its outcome may just be the deal breaker. Infrasturcture using deep networks might be highly susceptible to such attacks from hackers, where only a small noise has to be injected into the system to cause it to disfunction.</p>
+
+<p>Hence, I decided that it is a crucial and impactful research topic, and took a deep dive into this area. In the next section I will describe what teh work in this paper. Link to code, paper are present in the bottom!</p>
+
+<h3 id="introduction-to-universal-adversarial-perturbations">Introduction to Universal Adversarial Perturbations</h3>
+
+<p><img src="../../img/fff.png" style="margin-left:auto;margin-right:auto;" /></p>
+
+<p>Many Adversarial attacks algorithms like, FGSM[1], DeepFool[2], etc. have been proposed previously, which generate perturbations for each image, which leads the model to predict wrong information(like class, segmentation etc). While these perturbations are very effective, they generate an image-specific perturbation which is adversarila to that specific image only. A natural question that arises is can there be a global perturbation which can act as adversarial to the network independant of the input image? That is, can we generate a imperceptible perturbation that is adversarial for all(almost) images that are given to the network?</p>
+
+<p>This kind of perturbation is called a Universal Adversarial Perturbation, introduced in [3]. In the paper, they propose a method to generate a Adversarial perturbation from 10.000 Image samples, which leads to spectacular drop in the performance of the model. They show the performance of their Adversarial perturbation on various CNNs for Classification. including big models such as ResNet152 as well as small models such as Caffenet. The metric used is Fooling Rate, which is the % of images for which the labels were changed after adding the pertubation.Their results are listed in Table 1.</p>
+
+<p>The paper establised the existence of Universal Adversarial Perturbations. Now, that the existence is established, a natural progression of reasoning leads to the question that can a UAP be crafted with no use of data? Do we necessarily need 10000 Images?</p>
+
+<p>In the work that preceeds this publication, authors, Mopuri Konda Reddy and Utsav Garg found out that such a perturbation can be crafted even in the absence of data! In a paper titled “Fast-Feature-Fool” [4], they introduced a new algorithm to form UAPs without use of any images. While the fooling rateis lower to the UAP generated by Seyed-Mohsen Moosavi-Dezfooli et al, it shows some other interesting properties, such as being trasferable across dataset, being magnitudes faster to generate etc.</p>
+
+<p>The paper I worked on is a Journal extension of this work. While Journals generally do not contain substantial amount of additional work than a published conference paper(personal opinion), this work has substantial addition which make “fast-feature-fool” a much more competetive algorithm, and enable advarsarial generation on any task,from Classification to Depth Estimation.</p>
+
+<p>Tha major Contributions of this work are:</p>
+
+<p>1) Significant enhancement in the algorithm, leading to better performing UAPs.</p>
+
+<p>2) Introducing the concept of using data priors for generating UAPs, which makes the UAP as strong as the ones introduced in [3].</p>
+
+<p>3) Show the generalizability of the algorithm proposed, by showing evidence of ‘Fooling’ on various tasks like Classification, Semantic Segmentation, and depth estimation.</p>
+
+<h3 id="references">References</h3>
+
+<p>[1] : Explaining and harnessing adversarial examples; Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy.</p>
+
+<p>[2] : DeepFool: a simple and accurate method to fool deep neural networks; Seyed-Mohsen Moosavi-Dezfooli, Alhussein Fawzi, Pascal Frossard.</p>
+
+<p>[3] : Universal adversarial perturbations; Seyed-Mohsen Moosavi-Dezfooli, Alhussein Fawzi, Omar Fawzi, Pascal Frossard.</p>
+
+<p>[4] : Fast Feature Fool: A data independent approach to universal adversarial perturbations; Konda Reddy Mopuri, Utsav Garg, R. Venkatesh Babu</p>
+
+<h3 id="links">Links</h3>
+
+<p>The code for this paper has been written in python on Pytorch as well as Tensorflow.You can,</p>
+
+<ul>
+  <li>
+    <p>Download the code <a href="https://github.com/val-iisc/G-UAP">here</a></p>
+  </li>
+  <li>
+    <p>Download the Paper <a href="../../pdf/G_UAP.pdf">here</a>.</p>
+  </li>
+</ul>
+
+</div>
+<!--
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+-->
+
+    </div>
+
+  </body>
+</html>
