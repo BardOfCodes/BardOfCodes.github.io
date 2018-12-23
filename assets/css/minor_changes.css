@@ -1,0 +1,57 @@
+.darkest-bg{
+    background: #3d3838 !important
+}
+.dark-bg{
+    background:#645a70 !important
+}
+.normal-bg{
+    background: #958aa3 !important
+}
+.light-bg{
+    background:#c4c4c4 !important
+
+}
+.lightest-bg{
+    background: #eaeaea ! important
+}
+.darkest-font{
+    color: #3d3838 !important
+}
+.dark-font{
+    color:#645a70 !important
+}
+.normal-font{
+    color: #958aa3 !important
+}
+.light-font{
+    color:#c4c4c4 !important
+
+}
+.lightest-font{
+    color: #eaeaea ! important
+}
+.circle-add{
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:25%;
+}
+.head-font{
+    font-family: 'Roboto Condensed', sans-serif !important;
+    text-align: center !important;
+}
+.para-font{
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+.my-box{
+    /*width: 150% !important;*/
+    /*margin-left: -25% !important;*/
+    padding-top: 25px;
+    padding-bottom:25px;
+}
+.news a:link { color: #958aa3 !important }
+.news a:visited { color: #958aa3 !important}
+.news a:hover { color: #645a70 !important }
+.news a:active { color: #958aa3 !important }
+.card-action{
+    text-align: right;
+}

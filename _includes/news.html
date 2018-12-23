@@ -1,0 +1,21 @@
+
+
+<ul>
+{% for category in site.categories %}
+  {% if category.first == "news" %}
+    <h5 class="para-font darkest-font">
+      <small>
+        <p>
+    {% for post in category.last limit:{{include.limit}} %}
+      <li> 
+        <b>{{ post.date | date: "%-d %B %Y" }} </b>:  {{ post.content }}
+      </li>
+    {% endfor %}
+    {% if include.seemore == true %}
+    <li> <a href="{{ site.baseurl }}/news/"> See all news ...</a></li>
+    {% endif %}
+        </p>
+      </small> 
+  {% endif %}
+{% endfor %}
+</ul>
