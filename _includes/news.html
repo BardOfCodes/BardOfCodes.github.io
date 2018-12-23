@@ -8,11 +8,11 @@
         <p>
     {% for post in category.last limit:{{include.limit}} %}
       <li> 
-        <b>{{ post.date | date: "%-d %B %Y" }} </b>:  {{ post.content }}
+        <b>{{ post.date | date: "%-d %B %Y" }} </b>:  {{ post.content | remove: '<p>' | remove: '</p>'}}
       </li>
     {% endfor %}
     {% if include.seemore == true %}
-    <li> <a href="{{ site.baseurl }}/news/"> See all news ...</a></li>
+    <li> <a href="{{ site.baseurl }}/news.html"> See all news ...</a></li>
     {% endif %}
         </p>
       </small> 
