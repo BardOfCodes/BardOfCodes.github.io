@@ -3,7 +3,7 @@
 {% assign navigation_pages = site.pages | sort: 'date' | reverse %}
 
 {% for post in site.pages | sort: 'date' | reverse %}
-  {% if post.categories == 'research_work' and pub_counter <= include.limit %}
+  {% if post.categories == include.topic and pub_counter <= include.limit %}
   <!--<h1>  {{ pub_counter }} </h1>-->
 <!--{% increment pub_counter %}-->
   <div class="col s12">
