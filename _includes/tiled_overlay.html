@@ -2,7 +2,7 @@
 <!--{% increment pub_counter %}-->
 {% assign navigation_pages = site.pages | sort: 'date' | reverse %}
 
-{% for post in site.pages | sort: 'date' | reverse %}
+{% for post in navigation_pages %}
   {% if post.categories == include.topic and pub_counter <= include.limit %}
   <!--<h1>  {{ pub_counter }} </h1>-->
 <!--{% increment pub_counter %}-->
