@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Phonetroller: Visual Representations of Fingers for Precise Touch Input with Mobile Phones in VR.
+title:  Phonetroller - Visual Representations of Fingers for Precise Touch Input with Mobile Phones in VR.
 date:   2021-05-14 00:00:00 +0830
 categories: research_work
 tags: research_work
