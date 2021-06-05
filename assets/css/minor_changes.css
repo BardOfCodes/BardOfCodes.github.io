@@ -52,6 +52,11 @@
 .news a:visited { color: #958aa3 !important}
 .news a:hover { color: #645a70 !important }
 .news a:active { color: #958aa3 !important }
+
+.darkest-font a:link { color: #958aa3 !important }
+.darkest-font a:visited { color: #958aa3 !important}
+.darkest-font a:hover { color: #645a70 !important }
+.darkest-font a:active { color: #958aa3 !important }
 .card-action{
     text-align: right;
 }
