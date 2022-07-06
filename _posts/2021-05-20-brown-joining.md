@@ -6,4 +6,4 @@ categories: news
 tags: news
 ---
 
-I will be joining Brown University as a CS PhD student from fall 2021 with professor [Daniel Ritchie](https://dritchie.github.io/) as my advisor (hopefully!) at the [Brown Visual Computing (BVC)](https://visual.cs.brown.edu/) Lab. Exciting times ahead!
+I will be joining Brown University as a CS PhD student from fall 2021 with professor [Daniel Ritchie](https://dritchie.github.io/) as my advisor at the [Brown Visual Computing (BVC)](https://visual.cs.brown.edu/) Lab. Exciting times ahead!
