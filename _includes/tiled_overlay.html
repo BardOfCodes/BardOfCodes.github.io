@@ -1,13 +1,13 @@
 
-<!--{% increment pub_counter %}-->
+<!--{% increment pub_overlay_counter %}-->
 {% assign navigation_pages = site.pages | sort: 'date' | reverse %}
 
 {% for post in navigation_pages %}
-  {% if post.categories == include.topic and pub_counter <= include.limit %}
-  <!--<h1>  {{ pub_counter }} </h1>-->
-<!--{% increment pub_counter %}-->
+  {% if post.categories == include.topic and pub_overlay_counter <= include.limit %}
+  <!--<h1>  {{ pub_overlay_counter }} </h1>-->
+<!--{% increment pub_overlay_counter %}-->
 <div class="col s12 m6 l4">
-  <div class="card hoverable">
+  <div class="card">
     <div class="card-image waves-effect waves-block waves-light geopattern activator" data-pattern-id="{{post.title}}">
       <i class="material-icons waves-effect waves-block waves-light">more_vert</i>
       <a class="card-title center-align valign-wrapper" href="{{post.link}}" target="_blank">{{post.title}}</a>

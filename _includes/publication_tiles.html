@@ -1,0 +1,144 @@
+
+<!--{% increment pub_tile_counter %}-->
+{% assign sortedResources = site.pages | sort: 'date' | reverse %}
+{% for post in sortedResources %}
+  {% if post.categories == include.topic and pub_tile_counter <= include.limit %}
+  <!--<h1>  {{ pub_tile_counter }} </h1>-->
+<!--{% increment pub_tile_counter %}-->
+  <div class="col s12">
+    <div class="card diff_bg">
+        
+      <div class="card-content">
+        <div class = 'row min_margin'>
+            <div class = 'col s2 min_margin'>
+                <img src= "{{ site.baseurl }}/{{ post.thumbnail }} " 
+                    style="height: 50%;width: 100%;object-fit: contain;max-height: 120px;">
+                </img>
+            </div>
+            <div class = 'col s10 min_margin'>
+                <span id="post-title" class="card-title">{{post.title}}</span>
+                <p id="post-date">
+                    {{ post.authors }}
+                </p>
+                <p id="post-date">
+                    {{ post.venue }}
+                </p>
+
+                <div class = 'row min_margin'>
+                {% if post.website_link %}
+                    <div class = 'col'>
+                    <a href="{{post.website_link }}" target = "_blank">
+                        Project Page
+                    </a>
+                    </div>
+                {% endif %}
+                {% if post.poster %}
+                    <div class = 'col'>
+                    <a href="{{post.poster }}" target = "_blank">
+                        Poster
+                    </a>
+                    </div>
+                {% endif %}
+                {% if post.pub_link %}
+                <div class = 'col'>
+                <a href="{{post.pub_link }}" target = "_blank">
+                    Publication
+                </a>
+                </div>
+                {% endif %}
+                {% if post.code_link %}
+                <div class = 'col'>
+                <a href="{{post.code_link }}" target = "_blank">
+                    Code on GitHub
+                </a>
+                </div>
+                {% endif %}
+                </div>
+
+            </div>
+        </div>
+      </div>
+
+      <!-- <div class="card-action min_margin darkest-bg">
+
+          {% if post.website_link %}
+        <a href="{{post.website_link }}" target = "_blank">
+          Project Page
+        </a>
+        
+        {% endif %}
+
+        {% if post.poster %}
+        <a href="{{post.poster }}" target = "_blank">
+          Poster
+        </a>
+        
+        {% endif %}
+        
+          {% if post.pub_link %}
+        <a href="{{post.pub_link }}" target = "_blank">
+          Publication
+        </a>
+        
+        {% endif %}
+        
+          {% if post.code_link %}
+        <a href="{{post.code_link }}" target = "_blank">
+          Code on GitHub
+        </a>
+        
+        {% endif %}
+
+      </div> -->
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+
+{% if include.pagination == true %}
+
+  <div class="col s12 center-align">
+    <ul class="pagination">
+      <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
+        {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="{{site.baseurl}}/">
+        {% else %}
+        <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
+        {% endif %}
+        {% else %}
+        <a href="#!">
+        {% endif %}
+          <i class="material-icons">chevron_left</i>
+        </a>
+      </li>
+      {% if paginator.page == 1 %}
+      <li class="active teal">
+        <a href="#!">1</a>
+      {% else %}
+      <li class="waves-effect">
+        <a href="{{site.baseurl}}/">1</a>
+      {% endif %}
+      </li>
+      {% for count in (2..paginator.total_pages) %}
+      {% if count == paginator.page %}
+      <li class="active teal"><a href="#!">{{count}}</a></li>
+      {% else %}
+      <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+      {% endif %}
+      {% endfor %}
+      <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
+        {% if paginator.next_page %}
+        <a href="{{site.baseurl}}/page{{paginator.next_page}}">
+        {% else %}
+        <a href="#!">
+        {% endif %}
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  {% endif %}
+
+

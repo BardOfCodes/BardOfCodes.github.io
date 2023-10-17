@@ -3,21 +3,21 @@
 {% assign sortedResources = site.pages | sort: 'date' | reverse %}
 {% for post in sortedResources %}
   {% if post.categories == include.topic and pub_counter <= include.limit %}
-  <!--<h1>  {{ pub_counter }} </h1>-->
+  <!-- <h1>  {{ pub_counter }} </h1> -->
 <!--{% increment pub_counter %}-->
   <div class="col s12">
-    <div class="card hoverable">
+    <div class="card">
       <div class="card-content">
         <span id="post-title" class="card-title">{{post.title}}</span>
         <p id="post-date">
             {{ post.authors }}
         </p>
+        <p id="post-date">
+            {{ post.venue }}
+        </p>
         <div class = 'row'>
         {% if post.thumbnail %}
             <div class = 'col s6'>
-                <p id="post-date">
-                    {{ post.venue }}
-                </p>
                 <img src= "{{ site.baseurl }}/{{ post.thumbnail }} " 
                     style="height: 50%;width: 100%;object-fit: contain;max-height: 200px;">
                 </img>
