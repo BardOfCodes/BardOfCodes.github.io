@@ -40,7 +40,9 @@ js: ["https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.
         </div>
         {% include publication_tiles.html topic="research_work" limit=5 pagination=false %}
         <div class= 'col s12 news'>
-            <h5><a href = "{{site.baseurl}}/research"> See more research here!</a></h5> 
+            <div class="darkest-font para-font">
+                <h5><a href = "{{site.baseurl}}/research"> See more research here!</a></h5> 
+            </div>
         </div>
     </div>
     <div class="row">
@@ -55,6 +57,8 @@ js: ["https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.
         </div>
         {% include tiled_overlay.html limit=6 pagination=false topic="code" %}
         <div class= 'col s12 news'>
-            <h5><a href = "{{site.baseurl}}/projects"> See more projects here!</a></h5> 
+            <div class="darkest-font para-font">
+                <h5><a href = "{{site.baseurl}}/projects"> See more projects here!</a></h5> 
+            </div>
         </div>
     </div>
