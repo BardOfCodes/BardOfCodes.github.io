@@ -24,7 +24,7 @@
                     {{ post.venue }}
                 </p>
 
-                <div class = 'row min_margin'>
+                <div class = 'row min_margin darkest-font'>
                 {% if post.website_link %}
                     <div class = 'col'>
                     <a href="{{post.website_link }}" target = "_blank">
@@ -59,37 +59,6 @@
         </div>
       </div>
 
-      <!-- <div class="card-action min_margin darkest-bg">
-
-          {% if post.website_link %}
-        <a href="{{post.website_link }}" target = "_blank">
-          Project Page
-        </a>
-        
-        {% endif %}
-
-        {% if post.poster %}
-        <a href="{{post.poster }}" target = "_blank">
-          Poster
-        </a>
-        
-        {% endif %}
-        
-          {% if post.pub_link %}
-        <a href="{{post.pub_link }}" target = "_blank">
-          Publication
-        </a>
-        
-        {% endif %}
-        
-          {% if post.code_link %}
-        <a href="{{post.code_link }}" target = "_blank">
-          Code on GitHub
-        </a>
-        
-        {% endif %}
-
-      </div> -->
     </div>
   </div>
   {% endif %}
