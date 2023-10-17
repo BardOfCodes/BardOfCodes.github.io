@@ -5,52 +5,56 @@ js: ["https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.
 ---
 
   <!--<div class="col s12">-->
-<div class="card-image waves-block waves-light geopattern activator my-box row" data-pattern-id="bardofcodes">
-  <!--<h5><br></h5>-->
+<div class="card-image-2 waves-block waves-light geopattern activator my-box row" data-pattern-id="bardofcodes">
+    <!--<h5><br></h5>-->
   <div class= 'col s12'>
-<h2 style="text-align: center" class="head-font lightest-font"> Aditya Ganeshan</h2>
-<h5 style="text-align: center" class="head-font lightest-font"> CS PhD Student</h5>
-<h5 style="text-align: center" class="head-font lightest-font"> Brown University</h5>
-
-<h6 style="text-align: center" class="head-font lightest-font"> Graphics / Vision / Mathematics / Machine Learning / Music</h6>
-<!--<h5><br></h5>-->
-<!--<h5><br></h5>-->
+    <h2 style="text-align: center" class="head-font lightest-font"> Aditya Ganeshan</h2>
+    <h5 style="text-align: center" class="head-font lightest-font"> CS PhD Student</h5>
+    <h5 style="text-align: center" class="head-font lightest-font"> Brown University</h5>
+    <h6 style="text-align: center" class="head-font lightest-font"> Graphics / Vision / Mathematics / Machine Learning / Music</h6>
+    <!--<h5><br></h5>-->
+    <!--<h5><br></h5>-->
     </div>
 </div>
-<div class="row">
-  <div class= 'col s12'>
-    <h5>Most recent update: 16 October 2023.</h5>
-    <h4>What I am doing now:</h4> 
-    <h5 class="para-font darkest-font">
-      <small>
-        <p>
-        I am contributing towards four research directions: <b>a)</b> Semi-supervised program synthesis with approximate gradients, <b>b)</b> neural program rewriting, <b>c)</b> 3D Shape Editing with LLMs and <b>d)</b> 3D Scene generation with LLMs.
-        </p>
-        <p>
-        Apart from that, I spend some time trying to make music and understanding different graphics/vision/pl problems/ideas.
-        </p>
-        </small>
-    </h5>
-  </div>
- 
 
-    
-   
-  <div class= 'col s12 news'>
-    <h4>Recent Research:</h4> 
-  </div>
-  
-{% include publication_tiles.html topic="research_work" limit=5 pagination=false %}
-
-<div class= 'col s12 news'>
-  <h5><a href = "{{site.baseurl}}/research"> See more research here!</a></h5> 
-</div>
-
-<div class= 'col s12 news'>
-    <h4>Recent highlights and news:</h4> 
-</div>
-{% include news.html limit=5 seemore=true %}
-
-  </div>
-
-</div>
+    <div class="row">
+        <div class= 'col s12'>
+            <h5>Most recent update: 16 October 2023.</h5>
+            <h4>What I am doing now:</h4> 
+            <h5 class="para-font darkest-font">
+            <small>
+                <p>
+                I am contributing towards four research directions: <b>a)</b> Semi-supervised program synthesis with approximate gradients, <b>b)</b> neural program rewriting, <b>c)</b> 3D Shape Editing with LLMs and <b>d)</b> 3D Scene generation with LLMs.
+                </p>
+                <p>
+                Apart from that, I spend some time trying to make music and understanding different graphics/vision/pl problems/ideas.
+                </p>
+                </small>
+            </h5>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class= 'col s12 news'>
+            <h4>Recent Research:</h4> 
+        </div>
+        {% include publication_tiles.html topic="research_work" limit=5 pagination=false %}
+        <div class= 'col s12 news'>
+            <h5><a href = "{{site.baseurl}}/research"> See more research here!</a></h5> 
+        </div>
+    </div>
+    <div class="row">
+        <div class= 'col s12 news'>
+            <h4>Recent highlights and news:</h4> 
+        </div>
+        {% include news.html limit=5 seemore=true %}
+        </div>
+    <div class="row">
+        <div class= 'col s12'>
+            <h4>GitHub Code Projects</h4> 
+        </div>
+        {% include tiled_overlay.html limit=6 pagination=false topic="code" %}
+        <div class= 'col s12 news'>
+            <h5><a href = "{{site.baseurl}}/projects"> See more projects here!</a></h5> 
+        </div>
+    </div>
