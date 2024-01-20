@@ -1,19 +1,5 @@
 # My personal website
 
-## TODO
-
-1) News updates
-   1) ICCV oral
-   2) ICCV attendance
-   3) code release
-
-2) Projects:
-   1) Update github projects
-3) Research:
-    1) IROS and ICCV paper.
-4) Research page correction.
-5) Main page bring project pages to the front.
-
 ## Local setup instructions
 
 ```bash
